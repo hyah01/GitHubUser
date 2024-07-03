@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, provideHttpClient, withFetch } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

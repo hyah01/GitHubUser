@@ -1,0 +1,8 @@
+<div *ngIf="profile">
+    <h2>{{profile.name}}</h2>
+    <img src="{{profile.avatar_url}}" width="150"/>
+    <p>{{profile.bio}}</p>
+    <p>Followers: {{profile.follower}}</p>
+    <p>Following: {{profile.following}}</p>
+    <a href="{{profile.html_url}}" target="__blank">View Github</a>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from './post.service';
+import { GithubService } from './github.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,29 @@ import { PostService } from './post.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'GitHubUser';
-  posts: any;
+  // title = 'GitHubUser';
+  // posts: any;
 
-  constructor(private postService: PostService){}
+  // constructor(private postService: PostService){}
 
-  ngOnInit(){
-    this.postService.getPosts().subscribe(post => {
-      this.posts = post;
-    })
+  // ngOnInit(){
+  //   this.postService.getPosts().subscribe(post => {
+  //     this.posts = post;
+  //   })
+  // }
+
+  profile: any;
+
+  constructor(private githubService: GithubService){}
+
+  onSearch(username: string){
+    this.githubService.getUserProfile(username).subscribe(
+      (profile) => {
+        this.profile = profile;
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 }
