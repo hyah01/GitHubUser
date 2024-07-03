@@ -7,7 +7,9 @@
         <p>Followers: {{profile.followers}}</p>
         <p>Following: {{profile.following}}</p>
         <p>Public Repos: {{profile.public_repos}}</p>
-        <a href="{{profile.html_url}}" target="__blank">View Github</a>
+        <div class="button">
+            <a href="{{profile.html_url}}" target="__blank">View Github</a>
+        </div>
     </div>
     <div class="repo">
         <div *ngIf="repo" class="repo-container">

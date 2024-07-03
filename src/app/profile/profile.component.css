@@ -12,6 +12,47 @@
     min-width: 15%;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.profile img {
+    border-radius: 100%;
+    transition: transform 0.5 ease;
+}
+
+.profile img:hover {
+    animation: spin 5s linear infinite;
+}
+
+
+.profile h3 {
+    color: rgb(124, 124, 124);
+}
+
+.button a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border:none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button a:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
 .repo {
     height: 100%;
     width: 60%;
@@ -51,6 +92,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.repo-item:hover {
+    background-image: linear-gradient(rgb(255 255 255/15%) 0 0);
 }
 
 .repo-item a {

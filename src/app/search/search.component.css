@@ -14,3 +14,46 @@
     max-height: 60%;
     height: 60%;
 }
+
+.error {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 5rem;
+}
+
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.background-animation {
+    position: relative;
+}
+
+
+.astronaut {
+    position: absolute;
+    top: 0%;
+    left: 69%;
+    animation: spin 10s linear infinite; 
+}
+
+.planet {
+    position: relative;
+    top: 0%;
+    left: 0%;
+}
