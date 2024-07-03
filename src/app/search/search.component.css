@@ -1,0 +1,16 @@
+
+.search {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.profile {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 60%;
+    height: 60%;
+}
