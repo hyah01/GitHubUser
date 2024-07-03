@@ -19,11 +19,14 @@ export class SearchComponent {
       (profile) => { 
         this.error = null;
         this.profile = profile;
+        console.log("Profile Status: Ok")
         this.githubService.getUserRepos(this.username).subscribe(data => {
           this.repo = data;
+          console.log("Repo Status: Ok")
         })
       },
       (error) => {
+        console.log(error)
         this.error = error
         this.profile = null;
       }
