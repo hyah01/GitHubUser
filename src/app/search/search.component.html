@@ -1,9 +1,15 @@
-<form (ngSubmit)="onSubmit()">
-    <label for="username">GitHub Username: </label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required/>
-    <button type="submit">Search</button>
-</form>
-<app-profile [profile]="profile"></app-profile>
-<div *ngIf="error">
-    <p>Error: Can't Find Profile</p>
+<div class="body">
+    <div class="search">
+        <form (ngSubmit)="onSubmit()">
+            <label for="username">GitHub Username: </label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required/>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="profile">
+        <app-profile [profile]="profile" [repo]="repo"></app-profile>
+        <div *ngIf="error">
+            <p>Error: Can't Find Profile</p>
+        </div>
+    </div>
 </div>

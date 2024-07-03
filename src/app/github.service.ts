@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class GithubService {
   private apiUrl: string ='https://api.github.com/users/'; 
+  private repoUrl: string = 'https://api.github.com/users/';
 
   constructor(private http: HttpClient) { }
 
   getUserProfile(username: string): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}${username}`)
+  }
+
+  getUserRepos(username: string): Observable<any>{
+    return this.http.get<any>(`${this.repoUrl}${username}/repos`)
   }
 }
