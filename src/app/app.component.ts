@@ -19,18 +19,4 @@ export class AppComponent {
   //   })
   // }
 
-  profile: any;
-
-  constructor(private githubService: GithubService){}
-
-  onSearch(username: string){
-    this.githubService.getUserProfile(username).subscribe(
-      (profile) => {
-        this.profile = profile;
-      },
-      (error) => {
-        console.error(error);
-      }
-    )
-  }
 }

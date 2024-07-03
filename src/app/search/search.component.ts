@@ -8,17 +8,20 @@ import { GithubService } from '../github.service';
 })
 export class SearchComponent {
   username: string = '';
-  userProfile: any;
+  profile: any;
+  error: any;
 
   constructor(private githubService: GithubService){}
 
   onSubmit(){
     this.githubService.getUserProfile(this.username).subscribe(
       (profile) => { 
-        this.userProfile = profile;
+        this.error = null;
+        this.profile = profile;
       },
       (error) => {
-        console.log(error)
+        this.error = error
+        this.profile = null;
       }
     )
   }

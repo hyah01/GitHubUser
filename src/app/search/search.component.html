@@ -3,3 +3,7 @@
     <input type="text" id="username" name="username" [(ngModel)]="username" required/>
     <button type="submit">Search</button>
 </form>
+<app-profile [profile]="profile"></app-profile>
+<div *ngIf="error">
+    <p>Error: Can't Find Profile</p>
+</div>
