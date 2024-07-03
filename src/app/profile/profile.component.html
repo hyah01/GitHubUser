@@ -1,5 +1,5 @@
-<div *ngIf="profile" class="container">
-    <div class="profile">
+<div *ngIf="profile" class="container" [class.one-container]="(repo.length == 1)">
+    <div class="profile" [class.no-repo]="(repo.length == 0)" [class.one-repo]="(repo.length == 1)">
         <img src="{{profile.avatar_url}}" width="250"/>
         <h2>{{profile.name}}</h2>
         <h3>{{profile.login}}</h3>
@@ -11,10 +11,10 @@
             <a href="{{profile.html_url}}" target="__blank">View Github</a>
         </div>
     </div>
-    <div class="repo">
-        <div *ngIf="repo" class="repo-container">
+    <div  *ngIf="repo.length != 0" class="(repo.length == 1) ? one-repo-container : repo">
+        <div  class="repo-container" >
             <div class="wrapper">
-                <div *ngFor="let rep of repo.slice(0,12)" class="repo-item">
+                <div *ngFor="let rep of repo" class="repo-item">
                     <h3><a href="{{rep.html_url}}" target="__blank">{{rep.name}}</a></h3>
                     <div>
                         <p>{{rep.description}}</p>

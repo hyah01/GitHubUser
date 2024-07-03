@@ -9,7 +9,25 @@
 .profile {
     width: 16%;
     /* background-color: rgba(0,0,0, 0.2); */
-    min-width: 15%;
+    min-width: 16%;
+}
+
+.no-repo {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.one-repo {
+    width: 100%;
+}
+
+.one-repo-container {
+    width: 40rem;
+    height: 20%
+}
+
+.one-container {
+    width: 100%;
 }
 
 @keyframes spin {
