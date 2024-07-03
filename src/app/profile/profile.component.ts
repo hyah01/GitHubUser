@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ProfileComponent {
   @Input() profile: any;
+  @Input() repo: any;
 
 }
